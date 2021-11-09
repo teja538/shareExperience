@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shareExpFE"
+    }
+  },
+  "defaultProject": "shareExpFE",
+  "cli": {
+    "analytics": "41984e49-3426-465e-8c1a-1f0f3474e0fa"
+  }
 }
