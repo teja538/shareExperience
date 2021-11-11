@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shareExpFE';
+  //nav bar responsive 
+  navbarOpen = false;
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
 }
