@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { AddExperienceComponent } from './components/add-experience/add-experience.component';
 import { ViewExperienceComponent } from './components/view-experience/view-experience.component';
 import { ExperienceListComponent } from './components/experience-list/experience-list.component';
+import { PlacementPrepComponent } from './components/placement-prep/placement-prep.component';
 
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
-import { PlacementPrepComponent } from './placement-prep/placement-prep.component';
 
 @NgModule({
   declarations: [
