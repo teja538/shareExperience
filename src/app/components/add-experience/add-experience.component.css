@@ -1,0 +1,22 @@
+label{
+    color: rgba(0, 0, 0, 0.726);
+}
+
+.formSec
+{
+    max-width: 700px;
+    margin: auto;
+}
+
+.afterSubSec
+{
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn
+{
+    margin:20px 0px;
+    background-color:#6A007A;
+    color: white;
+}

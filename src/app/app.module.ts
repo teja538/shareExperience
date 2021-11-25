@@ -11,12 +11,16 @@ import { ExperienceListComponent } from './components/experience-list/experience
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
+import { PlacementPrepComponent } from './placement-prep/placement-prep.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AddExperienceComponent,
     ViewExperienceComponent,
-    ExperienceListComponent
+    ExperienceListComponent,
+    PlacementPrepComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide : LocationStrategy , useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

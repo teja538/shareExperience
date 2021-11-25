@@ -1,1 +1,29 @@
-<p>view-experience works!</p>
+<div class=container-fluid>
+    <div class="info">
+
+        <div class="header">
+            <h1 class="cent">{{currentExperience.companyName}}</h1> 
+            <p class="cent">role : {{currentExperience.role}} | package : {{currentExperience.package}}</p>
+        </div>
+       
+       <div class="body">
+            <h3>Experience:</h3>
+            <p class="preserveNewLine">{{currentExperience.expDoc}}</p>
+            <h4>Questions Asked in interview: </h4>
+            <p class="preserveNewLine">{{currentExperience.quesAsked}}</p>
+            <h4>Suggestions:</h4>
+            <p class="preserveNewLine">{{currentExperience.suggestions}}</p>
+            <h4>Useful links</h4>
+            <p class="preserveNewLine">{{currentExperience.usefulLinks}}</p>
+       </div>
+
+        <div class="footer">
+            
+            <p><b>From:</b><br>{{currentExperience.name}}<br>{{currentExperience.branch}}{{currentExperience.yop}}<br>{{currentExperience.email}}</p>
+           
+        </div>
+
+    </div>
+  
+</div>
+

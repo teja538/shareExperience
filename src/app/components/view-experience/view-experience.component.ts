@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServeExperienceService } from 'src/app/services/serve-experience.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-experience',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewExperienceComponent implements OnInit {
 
-  constructor() { }
+  currentExperience = null;
+  message = '';
+
+  constructor( 
+    private serveExperienceService:ServeExperienceService,
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+    this.message = '';
+    this.getExperience(this.route.snapshot.paramMap.get('id'));
+  }
+  getExperience(id):void
+  {
+    this.serveExperienceService.get(id)
+    .subscribe(
+      data=>{
+        this.currentExperience = data;
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    );
   }
 
 }

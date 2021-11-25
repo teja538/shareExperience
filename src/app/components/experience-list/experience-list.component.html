@@ -1,1 +1,39 @@
-<p>experience-list works!</p>
+<div class="container">
+ <div class="searchbar11">
+    <div class="input-group mb-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by company name"
+          [(ngModel)]="campanyName"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn searchbtn"
+            type="button"
+            (click)="searchCompanyName()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+ </div> 
+    
+  <div class="ExpCards">
+
+    <h4>Experiences</h4>
+    <div class="row">
+
+        <li class="card col-sm-4 mt-2" *ngFor="let exp of experiences; let i = index">
+            <div class="card-body">
+              <h5 class="card-title">{{ exp.companyName }}</h5>
+              <p>{{exp.role}} - {{exp.package}} LPA <br>{{exp.name}} <small>{{exp.branch}} {{exp.yop}}</small><br>verdict : {{exp.verdict}}</p>
+              <a routerLink="/expList/{{ exp.id }}" class="btn vmbtn">view more</a>
+            </div>
+          </li>
+        </div>
+
+  </div>
+</div>
+
+

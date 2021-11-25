@@ -1,1 +1,206 @@
-<p>add-experience works!</p>
+<div class = "container formSec">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>  
+          <!-- class.has-error,control-label,help-block(for displaying err msg inbuild classes in bootstrap) https://youtu.be/Vh6estB9kqk-->
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="experience.name"
+            #Ename="ngModel"
+            name="name"
+          />
+          <span class="help-block text-danger" *ngIf="Ename.invalid && Ename.touched"><small><i>*name is required</i></small></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              class="form-control"
+              id="email"
+              required
+              [(ngModel)]="experience.email"
+              #Eemail="ngModel"
+              name="email"
+            />
+          <span class="help-block text-danger" *ngIf="Eemail.invalid && Eemail.touched"><small><i>*email is required</i></small></span>
+
+          </div>
+  
+        <div class="row">
+            <div class="form-group col-md-6">
+            <label for="branch">Branch</label>
+            <select 
+                id="branch" 
+                class="form-control"
+                required
+                [(ngModel)]="experience.branch"
+                #Ebranch="ngModel"
+                name="branch">
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Civil</option>
+                <option>IT</option>
+                <option>Mech</option>
+                <option>Others</option>
+            </select>
+            <span class="help-block text-danger" *ngIf="Ebranch.invalid && Ebranch.touched"><small><i>*branch is not selected</i></small></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="yop">Year of passing</label>
+                <input
+                class="form-control"
+                id="yop"
+                required
+                [(ngModel)]="experience.yop"
+                #Eyop="ngModel"
+                name="yop"
+                />
+                <span class="help-block text-danger" *ngIf="Eyop.invalid && Eyop.touched"><small><i>*yop is required</i></small></span>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+          <div class="form-group col-md-6">
+            <label for="companyName">Company Name</label>
+            <input
+              class="form-control"
+              id="companyName"
+              required
+              [(ngModel)]="experience.companyName"
+              #Ecname="ngModel"
+              name="companyName"
+            />
+            <span class="help-block text-danger" *ngIf="Ecname.invalid && Ecname.touched"><small><i>*company name is required</i></small></span>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="verdict">Verdict</label>
+            <select 
+                id="verdict" 
+                class="form-control"
+                required
+                [(ngModel)]="experience.verdict"
+                #Everdict="ngModel"
+                name="verdict">
+                <option>Selected</option>
+                <option>Pending</option>
+                <option>Not Selected</option> 
+            </select>
+            <span class="help-block text-danger" *ngIf="Everdict.invalid && Everdict.touched"><small><i>*select the verdict</i></small></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="role">Role</label>
+                <input
+                class="form-control"
+                id="role"
+                required
+                [(ngModel)]="experience.role"
+                #Erole="ngModel"
+                name="role"
+                />
+              <span class="help-block text-danger" *ngIf="Erole.invalid && Erole.touched"><small><i>*role is required (eg: software developer,quality analyst,fullstack dev...)</i></small></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="package">Package(in LPA)</label>
+                <input
+                class="form-control"
+                id="package"
+                required
+                [(ngModel)]="experience.package"
+                #Epac="ngModel"
+                name="package"
+                />
+                <span class="help-block text-danger" *ngIf="Epac.invalid && Epac.touched"><small><i>*specify package in LPA (eg:7 or 12 or 3.5)</i></small></span>
+            </div>
+        </div>
+
+          <div class="form-group">
+            <label for="expDoc">Share your Experience <small><i>(1. No.of rounds 2.Round specific:round name,what's in it,what are the topics mostly asked,how you felt)</i></small></label>
+            <textarea
+              rows="6"
+              style="overflow:auto;"
+              class="form-control"
+              id="expDoc"
+              required
+              [(ngModel)]="experience.expDoc"
+              #Eexp="ngModel"
+              name="expDoc"
+            ></textarea>
+            <span class="help-block text-danger" *ngIf="Eexp.invalid && Eexp.touched"><small><i>*Experience is required</i></small></span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="quesAsked">Questions asked <small><i>(list of questions asked in the interview - if there are two rounds of interview specify round wise questions)</i></small></label>
+            <textarea
+              rows="9"
+              style="overflow:auto;"
+              class="form-control"
+              id="quesAsked"
+              required
+              [(ngModel)]="experience.quesAsked"
+              #Eques="ngModel"
+              (focus)="mytextOnFocus()"  
+              (keyup)="addBulletText($event)"
+              name="quesAsked"
+            ></textarea>
+            <span class="help-block text-danger" *ngIf="Eques.invalid && Eques.touched"><small><i>*questions asked is required</i></small></span>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="suggestions">Suggestions </label>
+            <textarea
+            rows="3"
+            style="overflow:auto;"
+              class="form-control"
+              id="suggestions"
+              required
+              [(ngModel)]="experience.suggestions"
+              name="suggestions"
+            ></textarea>
+          </div>
+
+          <!-- <textarea cols="50" rows="5" style="overflow:auto;">
+            I like web tutorial because....
+            </textarea> -->
+
+          <div class="form-group">
+            <label for="usefulLinks">Links</label>
+            <input
+              class="form-control"
+              id="usefulLinks"
+              required
+              [(ngModel)]="experience.usefulLinks"
+              name="usefulLinks"
+            />
+          </div>
+  
+        <button (click)="saveExperience()" [disabled]="!ngForm.valid" class="btn">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <div class = "container afterSubSec">
+          <h4>Hey! Thanks for sharing your Experience!</h4>
+          <h2>Your Experinece is so valuable and may help many juniurs to crack their deream job</h2>
+
+        <button class="btn" (click)="newExperience()">Add another company experience</button>
+        </div>
+      </div>
+    </div>
+  </div>

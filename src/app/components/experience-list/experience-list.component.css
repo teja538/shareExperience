@@ -1,0 +1,58 @@
+h4,h5{
+    color:#6A007A ;
+}
+p{
+    color: rgba(0, 0, 0, 0.726);
+}
+
+.searchbtn
+{
+    background-color:#58066438;
+}
+
+.searchbtn:hover
+{
+    background-color:#6A007A;
+    color: white;
+}
+
+.searchbar11
+{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card
+{
+    max-width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hideContent
+{
+    color: rgba(0, 0, 0, 0.767);
+    overflow: hidden;
+    line-height: 1em;
+    height: 3em;
+}
+
+.vmbtn
+{
+    color:whitesmoke;
+    background-color: #6A007A;
+}
+.vmbtn:hover
+{
+    /* color:#6A007A;
+    background-color: #d566e68a;
+    border: 2px solid #6A007A; */
+    background-color: white;
+    font-weight: 700;
+    color:#6A007A ;
+    border:1px solid #6A007A;
+}
+
+
+
+
